@@ -35,7 +35,7 @@ import ReactQr from 'react-awesome-qr'
 ## Demo
 git clone this repo and run `npm install ` then run `npm run dev`
 
-**In template**
+**In JSX**
 
 ```jsx
  <ReactQr text="test" size={300} dotScale={0.4}/>
