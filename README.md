@@ -30,16 +30,19 @@ npm install react-awesome-qr --save
 import ReactQr from 'react-awesome-qr'
 
 ```
-## Usage
 
-## Demo
-git clone this repo and run `npm install ` then run `npm run dev`
+## Usage
 
 **In JSX**
 
 ```jsx
  <ReactQr text="test" size={300} dotScale={0.4}/>
 ```
+
+
+
+## Demo
+git clone this repo and run `npm install ` then run `npm run dev`
 
 
 Parameter | Explanation
