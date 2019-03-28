@@ -1,4 +1,4 @@
-# vue-qr
+# react-awesome-qr
 <a href="https://www.npmjs.com/package/react-awesome-qr"><img src="https://img.shields.io/npm/v/react-awesome-qr.svg" alt="Version"></a>
 <a href="https://www.npmjs.com/package/react-awesome-qr"><img src="https://img.shields.io/npm/l/react-awesome-qr.svg" alt="License"></a>
 <a href="https://www.npmjs.com/package/react-awesome-qr"><img src="https://img.shields.io/david/dev/binaryify/react-awesome-qr.svg" alt="devDependencies" ></a>
