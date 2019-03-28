@@ -52,7 +52,7 @@ function renderQr(props, img, logoImg, gifBgSrc, cb) {
     logoMargin: props.logoMargin || 0,
     logoCornerRadius: props.logoCornerRadius || 8,
     whiteMargin: toBoolean(props.whiteMargin) || true,
-    dotScale: props.dotScale || 1,
+    dotScale: props.dotScale || 0.35,
     autoColor: toBoolean(props.autoColor) || true,
     binarize: toBoolean(props.binarize) || false,
     binarizeThreshold: props.binarizeThreshold || 128,
