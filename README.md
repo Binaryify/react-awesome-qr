@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# vue-qr
+<a href="https://www.npmjs.com/package/react-awesome-qr"><img src="https://img.shields.io/npm/v/react-awesome-qr.svg" alt="Version"></a>
+<a href="https://www.npmjs.com/package/react-awesome-qr"><img src="https://img.shields.io/npm/l/react-awesome-qr.svg" alt="License"></a>
+<a href="https://www.npmjs.com/package/react-awesome-qr"><img src="https://img.shields.io/david/dev/binaryify/react-awesome-qr.svg" alt="devDependencies" ></a>
+<a href="https://www.npmjs.com/package/react-awesome-qr"><img src="https://img.shields.io/david/binaryify/react-awesome-qr.svg" alt="devDependencies" ></a>
 
-## Available Scripts
+The React QR Component for [SumiMakito's Awesome-qr.js](https://github.com/SumiMakito/Awesome-qr.js)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Notice
+Not support IE 不支持IE浏览器
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Examples, 样例
 
-### `npm test`
+> Try to scan these QR codes below with your smart phone.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Example 1|Example 2|Example 3|Example 4
+------------ | ------------- | -------------| -------------
+<img src="https://raw.githubusercontent.com/Binaryify/react-awesome-qr/master/src/assets/result1.png" width="300"> | <img src="https://raw.githubusercontent.com/Binaryify/react-awesome-qr/master/src/assets/result2.png" width="300"> | <img src="https://raw.githubusercontent.com/Binaryify/react-awesome-qr/master/src/assets/result3.png" width="300"> | <img src="https://raw.githubusercontent.com/Binaryify/react-awesome-qr/master/src/assets/result4.gif" width="300">
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
+**install with NPM**
+```bash
+npm install react-awesome-qr --save
+```
+**Import**
+```js
+import ReactQr from 'react-awesome-qr'
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Demo
+git clone this repo and run `npm install ` then run `npm run dev`
 
-### `npm run eject`
+**In template**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```jsx
+ <ReactQr text="test" size={300} dotScale={0.4}/>
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Parameter | Explanation
+----|----
+text | Contents to encode. 欲编码的内容
+correctLevel|  Correct Level 0-3 容错级别 0-3
+size | Width as well as the height of the output QR code, includes margin. 尺寸, 长宽一致, 包含外边距
+margin | Margin to add around the QR code, default 20px. 二维码图像的外边距, 默认 20px
+colorDark | Color of "true" blocks. Works only when both colorDark and colorLight are set. (BYTE_DTA, BYTE_POS, BYTE_AGN, BYTE_TMG) 实点的颜色
+colorLight | Color of empty space, or "false" blocks. Works only when both colorDark and colorLight are set. (BYTE_EPT) 空白区的颜色
+bgSrc | Background url to embed in the QR code.  欲嵌入的背景图地址
+gifBgSrc | Gif background url to embed in the QR code, If gifBackground is set, backgroundImage will be ignored. This option will affects performance. 欲嵌入的背景图 gif 地址,设置后普通的背景图将失效。设置此选项会影响性能
+backgroundColor | Background color 背景色
+backgroundDimming | Color mask to add above the background image. Helpful when having problems with decoding. 叠加在背景图上的颜色, 在解码有难度的时有一定帮助
+logoSrc | Logo url to embed at the center of generated QR code, have a bug :the qr image will have a offset if logoSrc set, could set margin to 0 and use CSS set margin. 欲嵌入至二维码中心的 LOGO 地址,当设置 logo 后，二维码会有偏移，可以设置 margin 为0，用 CSS 设置 margin
+logoScale | Value used to scale the logo image. Larger value may result in decode failure. Size of the logo equals to `logoScale*(size-2*margin)`. Default is 0.2. 用于计算 LOGO 大小的值, 过大将导致解码失败, LOGO 尺寸计算公式 `logoScale*(size-2*margin)`, 默认 0.2
+logoMargin | White margin that appears around the logo image. Default is 0. LOGO 标识周围的空白边框, 默认为0
+logoBackgroundColor | Logo background color, need set logo margin. Logo 背景色,需要设置 logo margin
+logoCornerRadius | Radius of the logo's corners.Default is 0 LOGO 标识及其边框的圆角半径, 默认为0
+whiteMargin | If set to true, a white border will appear around the background image. Default is true. 若设为 true, 背景图外将绘制白色边框
+dotScale | Value used to scale down the data dots' size. (0 < scale < 1.0) default 1 数据区域点缩小比例,默认为1
+autoColor | If set to true, the dominant color of backgroundImage will be used as colorDark. Default is true. 若为 true, 背景图的主要颜色将作为实点的颜色, 即 colorDark,默认 true
+binarize | If set to true, the whole image will be binarized with the given threshold, or default threshold if not specified. Default is false. 若为 true, 图像将被二值化处理, 未指定阈值则使用默认值
+binarizeThreshold | Threshold used to binarize the whole image. Default is 128. (0 < threshold < 255) 二值化处理的阈值
+callback | Data URI of the generated QR code will be available here. 生成的二维码 Data URI 可以在回调中取得,第一个参数为二维码 data URL, 第二个参数为 props 传过来的 qid(因为二维码生成是异步的,所以加个 id 用于排序)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+For more details you should definitely check out [Awesome-qr.js ](https://github.com/SumiMakito/Awesome-qr.js)
