@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { toBoolean } from "./lib/util.js";
 import AwesomeQRCode from "./lib/awesome-qr";
 import imgLoaded from "./lib/imgLoaded";
@@ -62,4 +62,4 @@ function renderQr(props, img, logoImg, gifBgSrc, cb) {
   });
 }
 
-export default ReactAwesomeQr;
+export default memo(ReactAwesomeQr);

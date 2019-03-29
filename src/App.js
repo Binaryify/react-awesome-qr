@@ -21,7 +21,9 @@ function App() {
         dotScale={0.4}
       />
       <button onClick={e => setState(state + 1)} >change</button>
+      <ReactQr text="hello world" />
       <ReactQr text={state + ""} />
+      {state}
       <ReactQr
         gifBgSrc={require("./assets/dog.gif")}
         text="test test test" 

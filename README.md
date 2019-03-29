@@ -9,7 +9,7 @@ The React QR Component for [SumiMakito's Awesome-qr.js](https://github.com/SumiM
 
 
 ### Notice
-Not support IE 不支持IE浏览器
+Not support IE, not support CORS resource. please use the forward proxy 不支持IE浏览器。不支持 CORS 资源，请使用转发代理
 
 ### Examples, 样例
 
