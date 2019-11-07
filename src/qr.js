@@ -37,7 +37,7 @@ function ReactAwesomeQr(props) {
 function renderQr(props, img, logoImg, gifBgSrc, cb) {
   new AwesomeQRCode().create({
     gifBackground: gifBgSrc || undefined,
-    text: props.text,
+    text: props.text + "",
     size: props.size || 200,
     margin: props.margin === 0 ? 0 : 20,
     colorDark: props.colorDark || "#000000",
@@ -52,7 +52,7 @@ function renderQr(props, img, logoImg, gifBgSrc, cb) {
     logoMargin: props.logoMargin || 0,
     logoCornerRadius: props.logoCornerRadius || 8,
     whiteMargin: toBoolean(props.whiteMargin) || true,
-    dotScale: props.dotScale || 0.35,
+    dotScale: props.dotScale || 1,
     autoColor: toBoolean(props.autoColor) || true,
     binarize: toBoolean(props.binarize) || false,
     binarizeThreshold: props.binarizeThreshold || 128,
